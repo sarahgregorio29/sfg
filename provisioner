@@ -26,14 +26,15 @@ bootstrapdb(){
     CREATE DATABASE samtt;
     USE samtt;
     CREATE TABLE mo (
-      id int NOT NULL auto_increment,
-      msisdn varchar(20),
-      operatorid int,
-      shortcodeid int,
-      text varchar(255),
-      auth_token varchar(60),
+      id int UNSIGNED NOT NULL auto_increment,
+      msisdn varchar(20) NOT NULL,
+      operatorid int UNSIGNED NOT NULL,
+      shortcodeid int UNSIGNED NOT NULL,
+      text varchar(100) NOT NULL,
+      auth_token varchar(60) NOT NULL,
       created_at DATETIME,
-      PRIMARY KEY(id)
+      PRIMARY KEY(id),
+      INDEX (created_at)
     ) ;
 EOF
 }

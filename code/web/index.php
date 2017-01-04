@@ -1,7 +1,7 @@
 <?php
-require_once 'functions.php';
+require dirname(dirname(__FILE__)).'/vendor/autoload.php';
 
-$conn = connection();
-$token = get_auth_token();
-save($token);
-echo '{"status": "ok"}'."\n";
+use App\Http\Controllers\MOController;
+$mo_controller = new MOController;
+
+var_dump($mo_controller->addMO());
